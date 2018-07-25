@@ -1,7 +1,119 @@
 <!DOCTYPE html>
-<html>
-<body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
-</body>
-</html>
+<!-- saved from url=(0064)https://steam-chat.com/chat/clientui/?l=english&build=1532458786 -->
+<html class="responsive web_chat_frame fullheight"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Chat</title>
+	<link rel="shortcut icon" href="https://steam-chat.com/favicon.ico" type="image/x-icon">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<meta name="theme-color" content="#171a21">
+	<script type="text/javascript">
+						(function ()
+		{
+			var win = window;
+
+			// configure our Valve callbacks.  We do this on the web so they can be safely used there as well
+			win.ClearBackgroundInterval = window.clearInterval;
+			win.ClearBackgroundTimeout = window.clearTimeout;
+			win.SetBackgroundInterval = window.setInterval;
+			win.SetBackgroundTimeout = window.setTimeout;
+
+							var funcs = ['requestAnimationFrame', 'cancelAnimationFrame', 'setTimeout', 'setInterval'];
+				for ( var i =0; i < funcs.length; i++ )
+				{
+					( function( functionName) {
+						var func = win[functionName];
+						var fnWrappedFunc = func;
+						if ( functionName == 'requestAnimationFrame' )
+						{
+							fnWrappedFunc = function () {
+								var arg = arguments[0];
+								return SetBackgroundTimeout(arg, 20);
+							};
+						}
+						else if ( functionName == 'cancelAnimationFrame' )
+							fnWrappedFunc = ClearBackgroundTimeout;
+
+													// in public, we just allow it (but use our wrapped requestAnimationFrame that actually gets invoked)
+							if ( fnWrappedFunc != func )
+								win[functionName] = fnWrappedFunc;
+											})( funcs[i] );
+				}
+					})();
+			</script>
+	<script type="text/javascript">
+		!function(e){function n(r){if(t[r])return t[r].exports;var o=t[r]={i:r,l:!1,exports:{}};return e[r].call(o.exports,o,o.exports,n),o.l=!0,o.exports}var r=window.webpackJsonp;window.webpackJsonp=function(t,c,u){for(var i,a,f,l=0,s=[];l<t.length;l++)a=t[l],o[a]&&s.push(o[a][0]),o[a]=0;for(i in c)Object.prototype.hasOwnProperty.call(c,i)&&(e[i]=c[i]);for(r&&r(t,c,u);s.length;)s.shift()();if(u)for(l=0;l<u.length;l++)f=n(n.s=u[l]);return f};var t={},o={7:0};n.e=function(e){function r(){i.onerror=i.onload=null,clearTimeout(a);var n=o[e];0!==n&&(n&&n[1](new Error("Loading chunk "+e+" failed.")),o[e]=void 0)}var t=o[e];if(0===t)return new Promise(function(e){e()});if(t)return t[2];var c=new Promise(function(n,r){t=o[e]=[n,r]});t[2]=c;var u=document.getElementsByTagName("head")[0],i=document.createElement("script");i.type="text/javascript",i.charset="utf-8",i.async=!0,i.timeout=12e4,n.nc&&i.setAttribute("nonce",n.nc),i.src=n.p+""+e+".js";var a=setTimeout(r,12e4);return i.onerror=i.onload=r,u.appendChild(i),c},n.m=e,n.c=t,n.d=function(e,r,t){n.o(e,r)||Object.defineProperty(e,r,{configurable:!1,enumerable:!0,get:t})},n.n=function(e){var r=e&&e.__esModule?function(){return e.default}:function(){return e};return n.d(r,"a",r),r},n.o=function(e,n){return Object.prototype.hasOwnProperty.call(e,n)},n.p="",n.oe=function(e){throw console.error(e),e}}([]);	</script>
+	<link href="./Chat_files/motiva_sans.css" rel="stylesheet" type="text/css">
+<link href="./Chat_files/shared_global.css" rel="stylesheet" type="text/css">
+<link href="./Chat_files/shared_application.css" rel="stylesheet" type="text/css">
+<link href="./Chat_files/shared_clientuicontrols.css" rel="stylesheet" type="text/css">
+<link href="./Chat_files/shared_dialog.css" rel="stylesheet" type="text/css">
+<link href="./Chat_files/friends.css" rel="stylesheet" type="text/css">
+	<script type="text/javascript" src="./Chat_files/core.min.js.download"></script><style>	
+	@font-face {
+
+		font-family: 'Mtga-Extension-Comic-Sans';
+		src: url( 'chrome-extension://iopebbikefjcknnbmdkkcebchlnaioen/css/font4.ttf' );
+
+	}
+
+	.tweet[data-user-id='25073877'] .tweet-text,
+	.tweet[data-user-id='822215679726100480'] .tweet-text,
+	.QuoteTweet-innerContainer[data-user-id='25073877'] .tweet-text,
+	.QuoteTweet-innerContainer[data-user-id='822215679726100480'] .tweet-text{
+
+		font-family: 'Mtga-Extension-Comic-Sans';
+		font-size: 2em;
+		line-height: 24px;
+		letter-spacing: 2px;
+		margin-top: 12px;
+	
+	}
+
+	twitterwidget /deep/ .EmbeddedTweet[data-click-to-open-target*='https://twitter.com/realDonaldTrump/'] .Tweet-text,
+	twitterwidget /deep/ .EmbeddedTweet[data-click-to-open-target*='https://twitter.com/POTUS/'] .Tweet-text{
+
+		font-family: 'Mtga-Extension-Comic-Sans';
+		font-size: 2em;
+		line-height: 24px;
+		letter-spacing: 2px;
+		margin-top: 12px;
+
+	}
+
+	.EmbeddedTweet[data-click-to-open-target*='https://twitter.com/realDonaldTrump/'] .Tweet-text,
+	.EmbeddedTweet[data-click-to-open-target*='https://twitter.com/POTUS/'] .Tweet-text{
+
+		font-family: 'Mtga-Extension-Comic-Sans';
+		font-size: 2em;
+		line-height: 24px;
+		letter-spacing: 2px;
+		margin-top: 12px;
+
+	}
+
+	.mytweetclass {
+		font-family: 'Mtga-Extension-Comic-Sans';
+		font-size: 2em;
+		line-height: 24px;
+		letter-spacing: 2px;
+		margin-top: 12px;
+	}</style>
+<script type="text/javascript" src="./Chat_files/react.production.min.js.download"></script>
+<script type="text/javascript" src="./Chat_files/react-dom.production.min.js.download"></script>
+<script type="text/javascript" src="./Chat_files/encoding.min.js.download"></script>
+<script type="text/javascript" src="./Chat_files/libraries.js.download"></script>
+<script type="text/javascript" src="./Chat_files/libraries_cm.js.download"></script>
+<!--<script type="text/javascript" src="./Chat_files/friends.js.download"></script>-->
+<script type="text/javascript" src="./Chat_files/new_friends.js"></script>
+<script type="text/javascript" src="./Chat_files/shared_english.js.download"></script>
+<script type="text/javascript" src="./Chat_files/friendsui_english.js.download"></script>
+</head>
+<body class="fullheight">
+	<div id="webui_config" style="display: none;" data-config="{&quot;EUNIVERSE&quot;:1,&quot;WEB_UNIVERSE&quot;:&quot;public&quot;,&quot;LANGUAGE&quot;:&quot;english&quot;,&quot;CDN_URL&quot;:&quot;https:\/\/steamcommunity-a.akamaihd.net\/public\/shared\/javascript\/steamclientjs\/&quot;,&quot;MEDIA_CDN_COMMUNITY_URL&quot;:&quot;https:\/\/steamcdn-a.akamaihd.net\/steamcommunity\/public\/&quot;,&quot;MEDIA_CDN_URL&quot;:&quot;https:\/\/steamcdn-a.akamaihd.net\/&quot;,&quot;COMMUNITY_CDN_URL&quot;:&quot;https:\/\/steamcommunity-a.akamaihd.net\/&quot;,&quot;COMMUNITY_CDN_ASSET_URL&quot;:&quot;https:\/\/steamcdn-a.akamaihd.net\/steamcommunity\/public\/assets\/&quot;,&quot;PUBLIC_SHARED_URL&quot;:&quot;https:\/\/steamcommunity-a.akamaihd.net\/public\/shared\/&quot;,&quot;COMMUNITY_BASE_URL&quot;:&quot;https:\/\/steamcommunity.com\/&quot;,&quot;CHAT_BASE_URL&quot;:&quot;https:\/\/steam-chat.com\/&quot;,&quot;STORE_BASE_URL&quot;:&quot;https:\/\/store.steampowered.com\/&quot;,&quot;IN_CLIENT&quot;:true,&quot;USE_POPUPS&quot;:true,&quot;STORE_ICON_BASE_URL&quot;:&quot;https:\/\/steamcdn-a.akamaihd.net\/steam\/apps\/&quot;,&quot;WEBAPI_BASE_URL&quot;:&quot;https:\/\/api.steampowered.com\/&quot;,&quot;TOKEN_URL&quot;:&quot;https:\/\/steam-chat.com\/chat\/clientjstoken&quot;,&quot;SESSIONID&quot;:&quot;26219887b2f9cf3e91dbc05f&quot;,&quot;BUILD_TIMESTAMP&quot;:1532495584,&quot;FRIENDSUI_BETA&quot;:false}" data-userinfo="null">
+
+	</div>
+	<div id="friendslist-container" class="fullheight">
+	</div>
+	<div id="friendslist-droptarget"></div>
+
+
+</body></html>
