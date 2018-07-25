@@ -8521,6 +8521,7 @@ html.web_chat_frame .perf_timing_area
 .ChatMessageBlock
 {
 	position: relative;
+	background-color: red!important;
 }
 
 .ChatMessageBlock_HighlightDelete .ChatSpeaker,
